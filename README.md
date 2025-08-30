@@ -7,47 +7,47 @@ A command-line tool for refining prompts and then execute it using local Ollama 
 1. Install Ollama: https://ollama.com/
 2. Install required packages:
 ```bash
-   pip install ollama
+pip install ollama
 ```
 
 3. Download the scripts and setup
 ```bash
-wget https://raw.githubusercontent.com/trunghieu-automate/ollama_promptyng_cli/refs/heads/main/promptyng_cli.py
-chmod +x promptyng.py
-sudo ln -s $(pwd)/promptyng.py /usr/local/bin/promptyng
+wget https://raw.githubusercontent.com/trunghieu-automate/ollama_policeqa_cli/refs/heads/main/policeqa_cli.py
+chmod +x policeqa_cli.py
+sudo ln -s $(pwd)/policeqa_cli.py /usr/local/bin/policeqa
 ```
 
 For mac user
 ```
-echo "alias promptyng='python3 <promptyng_cli.py location>'" >> ~/.zshrc
+echo "alias policeqa='python3 <policeqa_cli.py location>'" >> ~/.zshrc
 source ~/.zshrc
 ```
 ## Usage
 ### Basic Prompt Refinement
 ```bash
-promptyng --model gemma3:4b --prompt "tell me a story about a robot"
+policeqa --model gemma3:4b --prompt "tell me a story about a robot"
 ```
 
 ### Batch Processing
 ```bash
-promptyng --model qwen3:4b --file prompts.txt
+policeqa --model qwen3:4b --file prompts.txt
 ```
 
 ### Interactive Mode
 ```bash
-promptyng
+policeqa
 ```
 
 ### Session management
 ```bash
 # List all sessions
-promptyng --list
+policeqa --list
 
 # View a specific session
-promptyng --session session_1712345678
+policeqa --session session_1712345678
 
 # Save results to file
-promptyng --model phi4-mini:3.8b --prompt "explain quantum computing" --output refined.json
+policeqa --model phi4-mini:3.8b --prompt "explain quantum computing" --output refined.json
 ```
 
 
